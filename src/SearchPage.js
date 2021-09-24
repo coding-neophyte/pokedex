@@ -11,7 +11,7 @@ export default class SearchPage extends Component {
     }
 
     getPokemon = async () => {
-        const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchPokemon}`);
+        const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchPokemon}&sort=pokemon&direction=${this.state.sortPokemon}`);
         console.log(response.body)
         this.setState({ pokemonArray: response.body.results })
     }
@@ -30,17 +30,22 @@ export default class SearchPage extends Component {
 
     }
 
-    // pokemonSort = ''
+
+    pokemonSort = (e) => {
+        this.setState({ sortPokemon: e.target.value })
+    }
+
 
 
 
     render() {
+        console.log(this.state.sortPokemon);
         return (
             <div>
                 <form onSubmit={this.submitPokemon}>
-                    <select>
+                    <select onChange={this.pokemonSort}>
                         <option value="asc"> ASC</option>
-                        <option value='dsc'>DSC</option>
+                        <option value='desc'>DSC</option>
                     </select>
                     <input onChange={this.findPokemon} />
                     <button>Search</button>
