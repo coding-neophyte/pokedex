@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PokeList from './PokeList'
 import request from 'superagent'
+import './App.css'
 
 export default class SearchPage extends Component {
     state = {
@@ -45,6 +46,8 @@ export default class SearchPage extends Component {
         console.log(this.state.sortPokemon);
         return (
             <div>
+                <h1> Find Your Pokemon</h1>
+                <p> Search for Pokemon or filter using dropdown below</p>
                 <form onSubmit={this.submitPokemon}>
                     <select onChange={this.pokemonSort}>
                         <option value="asc"> ASC</option>
