@@ -58,8 +58,10 @@ export default class SearchPage extends Component {
         return (
             <div>
                 <Header />
+
                 <h1> Find Your Pokemon</h1>
                 <p> Search for Pokemon or filter using dropdown below</p>
+                <p> Page Number: {this.state.currentPage}</p>
                 <form onSubmit={this.submitPokemon}>
                     <select onChange={this.pokemonSort}>
                         <option value="asc"> ASC</option>
@@ -68,7 +70,8 @@ export default class SearchPage extends Component {
                     <input onChange={this.findPokemon} />
                     <button>Search</button>
                 </form>
-                <button onClick={this.previousPageClick}> Prev </button>
+                {this.state.currentPage !== 1 ? <button onClick={this.previousPageClick}> Prev </button> : null}
+
                 <button onClick={this.nextPageClick}> Next </button>
                 <PokeList pokeArray={this.state.pokemonArray} />
             </div>
