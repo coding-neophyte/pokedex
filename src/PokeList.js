@@ -6,7 +6,7 @@ export default class PokeList extends Component {
         return (
             <div>
                 <ul>
-                    {this.props.pokeArray.map((poke) => <PokeItem key={poke.pokemon} img={poke.url_image} name={poke.pokemon} type={poke.type_1} />)}
+                    {this.props.pokeArray.map((poke) => <PokeItem key={poke.pokemon} img={poke.url_image} name={poke.pokemon} type={poke.type_1} id={poke._id} hp={poke.hp} attack={poke.attack} />)}
 
                 </ul>
             </div>
