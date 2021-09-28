@@ -62,17 +62,18 @@ export default class SearchPage extends Component {
                 <h1> Find Your Pokemon</h1>
                 <p> Search for Pokemon or filter using dropdown below</p>
                 <p> Page Number: {this.state.currentPage}</p>
-                <form onSubmit={this.submitPokemon}>
-                    <select onChange={this.pokemonSort}>
-                        <option value="asc"> ASC</option>
-                        <option value='desc'>DSC</option>
-                    </select>
-                    <input onChange={this.findPokemon} />
-                    <button>Search</button>
-                </form>
-                {this.state.currentPage !== 1 ? <button onClick={this.previousPageClick}> Prev </button> : null}
-
-                <button onClick={this.nextPageClick}> Next </button>
+                {this.state.loading ? <img src="https://www.supereasy.com/wp-content/uploads/2020/02/2020-02-12_19-13-36.jpg" alt="" /> :
+                    <form onSubmit={this.submitPokemon}>
+                        <select onChange={this.pokemonSort} className="DropDown">
+                            <option value="asc"> ASC</option>
+                            <option value='desc'>DSC</option>
+                        </select>
+                        <input onChange={this.findPokemon} />
+                        <button className='Search'>Search</button>
+                    </form>
+                }
+                {this.state.currentPage !== 1 ? <button onClick={this.previousPageClick} className="Button"> Prev Page  </button> : null}
+                {this.state.currentPage !== 27 ? <button onClick={this.nextPageClick} className="Button"> Next Page </button> : null}
                 <PokeList pokeArray={this.state.pokemonArray} />
             </div>
         )
