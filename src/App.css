@@ -77,3 +77,59 @@ li{
   margin: 10px;
   color: white;
 }
+
+.Button{
+
+ margin-left: 5%;
+ color: white;
+  font-weight: bold;
+ background-color: #61dafb;
+ border-color: #61dafb;
+ height: 25px;
+ width: 100px;
+ border-radius: 10px;
+}
+.Search{
+  color: white;
+  font-weight: bold;
+ background-color: #61dafb;
+ border-color: #61dafb;
+ height: 25px;
+ width: 100px;
+ border-radius: 10px;
+}
+
+
+
+.Nav{
+  text-align: center;
+}
+
+.Pokedex{
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.HomeTitle{
+  font-size: 600%;
+}
+
+.homepage{
+  margin-top: 15%;
+}
+
+
+.enter{
+  margin-left: 42%;
+}
+
+.enterButton{
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
+ background-color: #61dafb;
+ border-color: #61dafb;
+ height: 100px;
+ width: 200px;
+ border-radius: 10px;
+}

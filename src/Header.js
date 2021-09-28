@@ -6,11 +6,11 @@ export default class Header extends Component {
     render() {
         return (
             <>
-                <div>
-                    <NavLink to="/" activeClassName="Home"> Home</NavLink>
+                <div className="Nav">
+                    <NavLink to="/" activeClassName="Home"> <button> Home</button></NavLink>
 
 
-                    <NavLink to="/pokemon/" activeClassName="Pokedex"> PokeDex </NavLink>
+                    <NavLink to="/pokemon/" activeClassName="Pokedex"> <button> PokeDex </button> </NavLink>
 
 
                 </div>
