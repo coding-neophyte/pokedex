@@ -5,6 +5,7 @@ import PokemonItem from './PokemonItem'
 
 
 
+
 export default class Details extends Component {
     state = {
         pokemon: {},
@@ -12,18 +13,18 @@ export default class Details extends Component {
     }
 
     componentDidMount = async () => {
+        this.setState({ loading: true })
         const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex/${this.props.match.params._id}`)
-        this.setState({ pokemon: response.body, loading: true })
+        this.setState({ pokemon: response.body, loading: false })
 
     }
     render() {
         return (
             <div>
                 <Header />
-                <button onClick={this.previousPageClick}> Prev </button>
-                <button onClick={this.nextPageClick}> Next </button>
-                <PokemonItem {...this.state.pokemon} />
-
+                {this.state.loading ? <img src="https://wallpaperaccess.com/full/3897424.jpg" alt="" /> :
+                    <PokemonItem {...this.state.pokemon} />
+                }
             </div>
         )
     }
